@@ -4,6 +4,10 @@
   font-weight: bold;
 }
 
+button {
+  cursor: pointer;
+}
+
 /*
  *  ./login/
  */

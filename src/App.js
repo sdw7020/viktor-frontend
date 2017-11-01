@@ -3,8 +3,9 @@ import logo from './viktorlogo.png'
 import './App.css'
 import { Input, Button } from 'reactstrap'
 
-//import Overview from './components/login/LoginScreen'
-import Overview from './components/overview/Overview'
+// SWAP THE PATH OF THE LINE BELOW TO ./components/login/LoginScreen TO VIEW
+// THE LOGIN SCREEN.
+import ComponentTest from './components/overview/Overview'
 
 
 export default () => (
@@ -15,7 +16,7 @@ export default () => (
     </header>
 
     <div id="container">
-      <Overview />
+      <ComponentTest />
     </div>
   </div>
 )

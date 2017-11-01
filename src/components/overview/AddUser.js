@@ -10,10 +10,6 @@ export default () => (
           <Input type="email" name="email" id="exampleEmail" placeholder="John Doe" />
         </FormGroup>
         <FormGroup>
-          <Label for="examplePassword">Password</Label>
-          <Input type="password" name="password" id="examplePassword" placeholder="hunter2" />
-        </FormGroup>
-        <FormGroup>
           <table id="timeTable">
             <tr>
               <td>
