@@ -3,6 +3,8 @@ import logo from './viktorlogo.png'
 import './App.css'
 import { Input, Button } from 'reactstrap'
 
+import LoginScreen from './components/login/LoginScreen'
+
 class App extends Component {
   render() {
     return (
@@ -19,10 +21,7 @@ class App extends Component {
         <br />
         <br />
 
-        <div id="loginForm">
-          <Input id="input" type="password" autoFocus /><br />
-          <Button class="login">Log in</Button>
-        </div>
+        <LoginScreen />
       </div>
     )
   }

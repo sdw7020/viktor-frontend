@@ -1,0 +1,33 @@
+/*
+ *  ./login/
+ */
+
+#loginForm {
+  position: absolute;
+  width: 256px;
+  left: calc(50% - 128px);
+  top: 40%;
+}
+
+#loginButton {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  left: calc(50% - 50px);
+}
+
+/*
+ *  ./panel/
+ */
+
+.deleteColumn {
+  width: 10px;
+}
+
+.delete {
+  font-size: 10px;
+}
+
+#mainPanel {
+  width: 75%;
+}
