@@ -1,9 +1,18 @@
 import React from 'react'
 import UserTable from './UserTable'
+import AddUser from './AddUser'
+import AddPass from './AddPass'
 import '../style.css'
 
 export default () => (
-  <div id="mainPanel">
-    <UserTable />
+  <div id="overview">
+    <div id="mainPanel">
+      <UserTable />
+    </div>
+    <div id="sidePanel">
+      <AddUser />
+      <hr />
+      <AddPass />
+    </div>
   </div>
 )

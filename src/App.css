@@ -1,5 +1,8 @@
+body {
+  background: #eee;
+}
+
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -10,8 +13,9 @@
 .App-header {
   background-color: #fff;
   height: 150px;
-  padding: 20px;
+  padding: 16px;
   color: white;
+  padding-left: 32px;
 }
 
 .App-title {
@@ -23,16 +27,18 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-}
-
-body {
-  background: #eee;
-}
-
 #loginForm {
   position: absolute;
   width: 256px;
   left: calc(50% - 128px);
   font-size: 14pt;
+}
+
+#container {
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  top: 150px;
+  height: 70%;
+  background: #eee;
 }

@@ -1,3 +1,9 @@
+.h1 {
+  padding-bottom: 12px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 /*
  *  ./login/
  */
@@ -6,7 +12,8 @@
   position: absolute;
   width: 256px;
   left: calc(50% - 128px);
-  top: 40%;
+  top: 80px;
+  background: #eee;
 }
 
 #loginButton {
@@ -25,9 +32,43 @@
 }
 
 .delete {
-  font-size: 10px;
+  font-size: 16px;
+  padding: 4px 10px;
+}
+
+#overview {
+  position: absolute;
+  width: 100%;
+  top: 16px;
 }
 
 #mainPanel {
-  width: 75%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 70%;
+  height: 100%;
+  background: #aaa;
+}
+
+#sidePanel {
+  position: absolute;
+  left: 70%;
+  top: 0%;
+  width: 30%;
+  height: 100%;
+  background: #efefef;
+  padding: 12px 24px 24px 24px;
+}
+
+#timeTable {
+  width: 100%;
+}
+
+#userTable {
+  background: #ddee;
+}
+
+#addPassTitle {
+  padding-top: 16px;
 }
