@@ -30,6 +30,9 @@ body {
   background: #eee;
 }
 
-.login {
+#loginForm {
+  position: absolute;
+  width: 256px;
+  left: calc(50% - 128px);
   font-size: 14pt;
 }

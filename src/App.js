@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import logo from './viktorlogo.png'
 import './App.css'
-import { Button } from 'reactstrap'
+import { Input, Button } from 'reactstrap'
 
 class App extends Component {
   render() {
@@ -11,14 +11,18 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">viktor Admin Panel</h1>
         </header>
+        <br />
+        <br />
         <p className="App-intro">Welcome to the viktor Admin Panel!</p>
         <br />
         <br />
         <br />
         <br />
 
-        <input class="login" type="password" autoFocus />
-        <Button class="login">Log in</Button>
+        <div id="loginForm">
+          <Input id="input" type="password" autoFocus /><br />
+          <Button class="login">Log in</Button>
+        </div>
       </div>
     )
   }
