@@ -28,12 +28,6 @@ const login = store => next => async action => {
           name: 'WRONG_PASSWORD',
         },
       })
-
-      setTimeout(() => {
-        store.dispatch({
-          type: 'HIDE_MODAL',
-        })
-      }, 1000)
     }
   } else {
     return next(action)
