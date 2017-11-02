@@ -13,7 +13,6 @@ import WrongPasswordModal from './components/modals/WrongPasswordModal'
 
 const App = ({ page, modal }) => (
   <div className="App">
-    {console.log('modal:', modal)}
     <Header />
     <div id="container">
       {page === 'login' ? <LoginScreen /> : page === 'overview' ? <Overview /> : page === 'settings' ? <Settings /> : <p> unknown page </p>}
