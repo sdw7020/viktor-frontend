@@ -11,6 +11,7 @@ export default () => (
     </div>
     <div id="sidePanel">
       <AddUser />
+      <br />
       <hr />
     </div>
     <DeleteUserModal />

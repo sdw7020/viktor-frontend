@@ -1,8 +1,8 @@
-import React from 'react'
-import { Table } from 'reactstrap'
+import React from "react"
+import { Table } from "reactstrap"
 
-import TableRow from './TableRow'
-import { connect } from 'react-redux'
+import TableRow from "./TableRow"
+import { connect } from "react-redux"
 
 const UserTable = ({ entries }) => (
   <Table id="userTable">
@@ -10,10 +10,18 @@ const UserTable = ({ entries }) => (
       <tr>
         <th />
         <th />
-        <th>Username</th>
-        <th>PassID</th>
-        <th>Start time</th>
-        <th>End time</th>
+        <th>
+          Username<hr />
+        </th>
+        <th>
+          PassID<hr />
+        </th>
+        <th>
+          Start time<hr />
+        </th>
+        <th>
+          End time<hr />
+        </th>
       </tr>
     </thead>
     <tbody>
