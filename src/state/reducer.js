@@ -99,5 +99,12 @@ export default function reducer(oldState = defaultState, action) {
       }),
     }
   }
+
+  if (action.type === 'LOGOUT') {
+    return {
+      ...oldState,
+      page: 'login',
+    }
+  }
   return oldState
 }

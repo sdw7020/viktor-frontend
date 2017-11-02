@@ -114,3 +114,8 @@ table {
 #changePasswordInput {
   width: 256px;
 }
+
+.pass-id:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
