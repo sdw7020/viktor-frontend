@@ -50,5 +50,20 @@ export default function reducer(oldState = defaultState, action) {
       entries: oldState.entries.filter(({ username }) => username !== action.username),
     }
   }
+
+  if (action.type === 'ADD_USER') {
+    return {
+      ...oldState,
+      entries: [
+        ...oldState.entries,
+        {
+          username: action.username,
+          startTime: action.startTime,
+          endTime: action.endTime,
+          passIDs: [],
+        },
+      ],
+    }
+  }
   return oldState
 }

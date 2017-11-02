@@ -1,6 +1,6 @@
 import jsCookie from 'js-cookie'
 
-const loginMiddleware = store => next => async action => {
+const login = store => next => async action => {
   if (action.type === 'LOGIN') {
     const headers = new Headers()
     headers.set('x-auth', action.password)
@@ -31,7 +31,7 @@ const loginMiddleware = store => next => async action => {
   }
 }
 
-const deleteUserMiddleware = store => next => async action => {
+const deleteUser = store => next => async action => {
   if (action.type === 'DELETE_USER') {
     const password = jsCookie.get('password')
     const headers = new Headers()
@@ -55,9 +55,30 @@ const deleteUserMiddleware = store => next => async action => {
   }
 }
 
+const addUser = store => next => async action => {
+  if (action.type === 'ADD_USER') {
+    const password = jsCookie.get('password')
+    const headers = new Headers()
+    headers.set('x-auth', password)
+
+    const res = await fetch(`/user?username=${action.username.replace(/ /, '+')}&startTime=${action.startTime}&endTime=${action.endTime}`, {
+      method: 'POST',
+      headers,
+    })
+
+    if (res.ok) {
+      next(action)
+    } else {
+      console.error('add user request failed')
+    }
+  } else {
+    return next(action)
+  }
+}
+
 const logger = store => next => action => {
   console.log('ACTION:', action)
   next(action)
 }
 
-export default [logger, deleteUserMiddleware, loginMiddleware]
+export default [logger, addUser, deleteUser, login]
