@@ -1,32 +1,37 @@
 import React from "react"
-import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 
 export default class extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      modal: false,
+    }
 
     this.toggle = this.toggle.bind(this)
-    this.state = {
-      popoverOpen: false,
-    }
   }
 
   toggle() {
     this.setState({
-      popoverOpen: !this.state.popoverOpen,
+      modal: !this.state.modal,
     })
   }
 
   render() {
     return (
       <div>
-        <Button id="Popover1" onClick={this.toggle} className="add" color="success">
+        <Button onClick={this.toggle} className="add" color="success">
           +
         </Button>
-        <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.add}>
-          <PopoverHeader>Scan</PopoverHeader>
-          <PopoverBody>Scan your new pass in 10 seconds.</PopoverBody>
-        </Popover>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalHeader toggle={this.toggle}>Scan pass</ModalHeader>
+          <ModalBody>Scan the pass within 10 seconds.</ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={this.toggle}>
+              OK
+            </Button>
+          </ModalFooter>
+        </Modal>
       </div>
     )
   }

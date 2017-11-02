@@ -33,11 +33,16 @@ button {
 
 /*  ./panel/  */
 
-.deleteColumn {
+.tableButton {
   width: 10px;
 }
 
 .delete {
+  font-size: 16px;
+  padding: 4px 10px;
+}
+
+.add {
   font-size: 16px;
   padding: 4px 10px;
 }
@@ -72,7 +77,6 @@ button {
 }
 
 #userTable {
-  background: #ddee;
 }
 
 #addPassTitle {
