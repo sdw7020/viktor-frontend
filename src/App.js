@@ -2,16 +2,10 @@ import React from "react"
 import "./App.css"
 import { connect } from "react-redux"
 
-<<<<<<< HEAD
-import Header from './components/Header'
-import LoginScreen from './components/login/LoginScreen'
-import Overview from './components/overview/Overview'
-import Settings from './components/settings/Settings'
-=======
 import Header from "./components/Header"
 import LoginScreen from "./components/login/LoginScreen"
 import Overview from "./components/overview/Overview"
->>>>>>> 5d3340427ea5dbe03f16de508bed0768ae9eec8c
+import Settings from "./components/settings/Settings"
 
 const App = ({ page }) => (
   <div className="App">
