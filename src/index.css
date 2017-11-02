@@ -14,7 +14,19 @@ button {
   cursor: pointer;
 }
 
-/*  ./login/  */
+/*  header  */
+
+#menuBar {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.menuButtons {
+  margin-left: 8px;
+}
+
+/*  login  */
 
 #loginForm {
   position: absolute;
@@ -38,7 +50,7 @@ button {
   height: 55px;
 }
 
-/*  ./panel/  */
+/*  panel  */
 
 .tableButton {
   width: 10px;
@@ -88,4 +100,14 @@ button {
 
 #addPassTitle {
   padding-top: 16px;
+}
+
+/*  settings */
+
+#settingsContainer {
+  padding: 36px;
+}
+
+#changePasswordInput {
+  width: 256px;
 }

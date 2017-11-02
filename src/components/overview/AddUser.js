@@ -6,7 +6,7 @@ export default () => (
     <h1 className="h1">Add User</h1>
     <FormGroup>
       <Label>Username</Label>
-      <Input type="name" name="name" placeholder="johndoe" />
+      <Input type="name" placeholder="johndoe" />
     </FormGroup>
     <FormGroup>
       <table id="timeTable">
