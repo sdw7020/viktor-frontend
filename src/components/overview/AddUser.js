@@ -7,7 +7,7 @@ const AddUser = ({ addUser }) => (
     <h1 className="h1">Add User</h1>
     <FormGroup>
       <Label>Username</Label>
-      <Input id="username-add-input" type="name" placeholder="johndoe" maxlength="32" />
+      <Input id="username-add-input" type="name" placeholder="johndoe (max. 32 characters)" maxLength="32" />
     </FormGroup>
     <FormGroup>
       <table id="timeTable">
