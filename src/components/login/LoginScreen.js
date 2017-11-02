@@ -1,11 +1,8 @@
 import React from 'react'
-import Login from './LoginContainer'
-
-import WrongPassword from './WrongPassword'
+import Login from './Login'
 
 export default ({ ShowWrongPasswordPopup }) => (
   <div id="loginForm">
     <Login />
-    {ShowWrongPasswordPopup ? <WrongPassword /> : undefined}
   </div>
 )

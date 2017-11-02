@@ -22,9 +22,18 @@ const login = store => next => async action => {
       })
     } else {
       jsCookie.remove('password')
-      next({
-        type: 'LOGIN_FAILURE',
+      store.dispatch({
+        type: 'SHOW_MODAL',
+        modal: {
+          name: 'WRONG_PASSWORD',
+        },
       })
+
+      setTimeout(() => {
+        store.dispatch({
+          type: 'HIDE_MODAL',
+        })
+      }, 1000)
     }
   } else {
     return next(action)
@@ -44,7 +53,6 @@ const deleteUser = store => next => async action => {
     if (res.ok) {
       store.dispatch({
         type: 'HIDE_MODAL',
-        modal: 'deleteUser',
       })
       next(action)
     } else {
@@ -82,7 +90,7 @@ const addPass = store => next => async action => {
     const headers = new Headers()
     headers.set('x-auth', password)
 
-    const username = store.getState().modals.addPassUsername
+    const username = store.getState().modal.username
 
     const res = await fetch(`/pass?username=${username}`, {
       method: 'PUT',
@@ -136,9 +144,31 @@ const logout = store => next => action => {
   return next(action)
 }
 
+const changePassword = store => next => async action => {
+  if (action.type === 'CHANGE_PASSWORD') {
+    const password = jsCookie.get('password')
+    const headers = new Headers()
+    headers.set('x-auth', password)
+
+    const res = await fetch(`/adminpassword?password=${action.newPassword}`, {
+      method: 'PUT',
+      headers,
+    })
+
+    if (res.ok) {
+      jsCookie.remove('password')
+      return next(action)
+    } else {
+      console.error('Error with remove pass request')
+    }
+  } else {
+    return next(action)
+  }
+}
+
 const logger = store => next => action => {
   console.log('ACTION:', action)
   next(action)
 }
 
-export default [logger, logout, removePass, addPass, addUser, deleteUser, login]
+export default [logger, changePassword, logout, removePass, addPass, addUser, deleteUser, login]

@@ -2,8 +2,8 @@ import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import { connect } from 'react-redux'
 
-const DeleteUserModal = ({ isVisible, username, deleteUser, hideModal }) => (
-  <Modal isOpen={isVisible}>
+const DeleteUserModal = ({ username, deleteUser, hideModal }) => (
+  <Modal isOpen={true}>
     <ModalHeader>Delete user?</ModalHeader>
     <ModalBody>Are you sure you want to delete {username}?</ModalBody>
     <ModalFooter>
@@ -18,8 +18,7 @@ const DeleteUserModal = ({ isVisible, username, deleteUser, hideModal }) => (
 )
 
 const mapStateToProps = state => ({
-  isVisible: state.modals.deleteUser,
-  username: state.modals.deleteUserUsername,
+  username: state.modal.username,
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -1,8 +1,6 @@
-import React from "react"
-import UserTable from "./UserTable"
-import AddUser from "./AddUser"
-import DeleteUserModal from "./DeleteUserModal"
-import AddPassModal from "./AddPassModal"
+import React from 'react'
+import UserTable from './UserTable'
+import AddUser from './AddUser'
 
 export default () => (
   <div id="overview">
@@ -14,7 +12,5 @@ export default () => (
       <br />
       <hr />
     </div>
-    <DeleteUserModal />
-    <AddPassModal />
   </div>
 )

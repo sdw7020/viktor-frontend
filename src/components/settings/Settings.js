@@ -1,6 +1,7 @@
 import React from 'react'
 import { FormGroup, Label, Input, Button } from 'reactstrap'
 import { connect } from 'react-redux'
+import jsCookie from 'js-cookie'
 
 const Settings = ({ changePassword }) => (
   <div id="settingsContainer">
@@ -17,12 +18,18 @@ const Settings = ({ changePassword }) => (
     </FormGroup>
     <FormGroup>
       <Button
-        // onClick={() => {
-        //   const oldPassword = document.getElementById('changePasswordInput1')
-        //   const newPassword = document.getElementById('changePasswordInput2')
-        //
-        //   if ()
-        // }}
+        onClick={() => {
+          const oldPassword = document.getElementById('changePasswordInput1').value
+          const newPassword = document.getElementById('changePasswordInput2').value
+
+          if (oldPassword === jsCookie.get('password')) {
+            changePassword(newPassword)
+          } else {
+            console.log('old:', oldPassword)
+            console.log('cookiepass:', jsCookie.get('password'))
+            console.error("Passwords don't match")
+          }
+        }}
         color="primary"
         className="addButton"
       >

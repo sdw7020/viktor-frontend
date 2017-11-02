@@ -14,8 +14,10 @@ const mapDispatchToProps = dispatch => ({
   addPass: username => {
     dispatch({
       type: 'SHOW_MODAL',
-      modal: 'addPass',
-      username,
+      modal: {
+        name: 'ADD_PASS',
+        username,
+      },
     })
     dispatch({
       type: 'ADD_PASS',

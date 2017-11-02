@@ -1,11 +1,7 @@
 const defaultState = {
   page: 'login',
   entries: [],
-  modals: {
-    deleteUser: false,
-    deleteUserUsername: null,
-    addPass: false,
-  },
+  modal: null,
 }
 
 export default function reducer(oldState = defaultState, action) {
@@ -32,17 +28,17 @@ export default function reducer(oldState = defaultState, action) {
   }
 
   if (action.type === 'SHOW_MODAL') {
-    const newState = { ...oldState, modals: { ...oldState.modals } }
-    newState.modals[action.modal] = true
-    newState.modals[`${action.modal}Username`] = action.username
-    return newState
+    return {
+      ...oldState,
+      modal: action.modal,
+    }
   }
 
   if (action.type === 'HIDE_MODAL') {
-    const newState = { ...oldState, modals: { ...oldState.modals } }
-    newState.modals[action.modal] = false
-    newState.modals[`${action.modal}Username`] = null
-    return newState
+    return {
+      ...oldState,
+      modal: null,
+    }
   }
 
   if (action.type === 'DELETE_USER') {
@@ -111,6 +107,13 @@ export default function reducer(oldState = defaultState, action) {
     return {
       ...oldState,
       page: action.page,
+    }
+  }
+
+  if (action.type === 'CHANGE_PASSWORD') {
+    return {
+      ...oldState,
+      page: 'login',
     }
   }
   return oldState

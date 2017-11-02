@@ -1,7 +1,8 @@
 import React from 'react'
 import { Input, Button } from 'reactstrap'
+import { connect } from 'react-redux'
 
-export default ({ login }) => {
+const Login = ({ login }) => {
   return (
     <div id="loginForm">
       <Input id="password-input" type="password" placeholder="Password" autoFocus />
@@ -18,3 +19,13 @@ export default ({ login }) => {
     </div>
   )
 }
+
+const mapDispatchToProps = dispatch => ({
+  login: password =>
+    dispatch({
+      type: 'LOGIN',
+      password,
+    }),
+})
+
+export default connect(undefined, mapDispatchToProps)(Login)
