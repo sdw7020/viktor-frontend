@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from './viktorlogo.png'
 import './App.css'
-import { Input, Button } from 'reactstrap'
+import {} from 'reactstrap'
 
 // SWAP THE PATH OF THE LINE BELOW TO ./components/login/LoginScreen TO VIEW
 // THE LOGIN SCREEN.
