@@ -3,7 +3,7 @@ import { FormGroup, Label, Input, Button } from 'reactstrap'
 import { connect } from 'react-redux'
 import jsCookie from 'js-cookie'
 
-const Settings = ({ changePassword }) => (
+const Settings = ({ changePassword, showWrongPassword }) => (
   <div id="settingsContainer">
     <h1 className="h1">Settings</h1>
 
@@ -25,8 +25,6 @@ const Settings = ({ changePassword }) => (
           if (oldPassword === jsCookie.get('password')) {
             changePassword(newPassword)
           } else {
-            console.log('old:', oldPassword)
-            console.log('cookiepass:', jsCookie.get('password'))
             console.error("Passwords don't match")
           }
         }}
@@ -47,6 +45,13 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'CHANGE_PASSWORD',
       newPassword,
+    }),
+  showWrongPassword: () =>
+    dispatch({
+      type: 'SHOW_MODAL',
+      modal: {
+        name: 'WRONG_PASSWORD',
+      },
     }),
 })
 
