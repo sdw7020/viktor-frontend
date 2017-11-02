@@ -2,7 +2,6 @@ import React from 'react'
 import UserTable from './UserTable'
 import AddUser from './AddUser'
 import AddPass from './AddPass'
-import '../style.css'
 
 export default () => (
   <div id="overview">

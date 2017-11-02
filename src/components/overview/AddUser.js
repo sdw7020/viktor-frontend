@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
-import '../style.css'
 
 export default () => (
   <Form>
@@ -24,7 +23,9 @@ export default () => (
       </table>
     </FormGroup>
     <FormGroup>
-      <Button color="primary" className="addButton">Add User</Button>
+      <Button color="primary" className="addButton">
+        Add User
+      </Button>
     </FormGroup>
   </Form>
 )
