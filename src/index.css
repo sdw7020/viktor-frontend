@@ -105,17 +105,17 @@ table {
   padding-top: 16px;
 }
 
+.pass-id:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /*  settings */
 
 #settingsContainer {
   padding: 36px;
 }
 
-#changePasswordInput {
+.changePasswordInput {
   width: 256px;
-}
-
-.pass-id:hover {
-  text-decoration: underline;
-  cursor: pointer;
 }

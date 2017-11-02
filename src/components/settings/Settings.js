@@ -1,6 +1,6 @@
-import React from 'react'
-import { FormGroup, Label, Input, Button } from 'reactstrap'
-import { connect } from 'react-redux'
+import React from "react"
+import { FormGroup, Label, Input, Button } from "reactstrap"
+import { connect } from "react-redux"
 
 const Settings = ({ changePassword }) => (
   <div id="settingsContainer">
@@ -10,10 +10,10 @@ const Settings = ({ changePassword }) => (
       <Label>Change admin password.</Label>
     </FormGroup>
     <FormGroup>
-      <Input id="changePasswordInput1" type="password" placeholder="Old Password" autoFocus />
+      <Input id="changePasswordInput1" className="changePasswordInput" type="password" placeholder="Old Password" autoFocus />
     </FormGroup>
     <FormGroup>
-      <Input id="changePasswordInput2" type="password" placeholder="New Password" autoFocus />
+      <Input id="changePasswordInput2" className="changePasswordInput" type="password" placeholder="New Password" autoFocus />
     </FormGroup>
     <FormGroup>
       <Button
@@ -38,7 +38,7 @@ const Settings = ({ changePassword }) => (
 const mapDispatchToProps = dispatch => ({
   changePassword: newPassword =>
     dispatch({
-      type: 'CHANGE_PASSWORD',
+      type: "CHANGE_PASSWORD",
       newPassword,
     }),
 })
