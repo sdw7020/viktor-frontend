@@ -10,20 +10,28 @@ const Settings = ({ changePassword }) => (
       <Label>Change admin password.</Label>
     </FormGroup>
     <FormGroup>
-      <Input id="changePasswordInput" type="password" placeholder="Old Password" autoFocus />
+      <Input id="changePasswordInput1" type="password" placeholder="Old Password" autoFocus />
     </FormGroup>
     <FormGroup>
-      <Input id="changePasswordInput" type="password" placeholder="New Password" autoFocus />
+      <Input id="changePasswordInput2" type="password" placeholder="New Password" autoFocus />
     </FormGroup>
     <FormGroup>
-      <Button color="primary" className="addButton">
+      <Button
+        // onClick={() => {
+        //   const oldPassword = document.getElementById('changePasswordInput1')
+        //   const newPassword = document.getElementById('changePasswordInput2')
+        //
+        //   if ()
+        // }}
+        color="primary"
+        className="addButton"
+      >
         Change password
       </Button>
     </FormGroup>
 
     <br />
     <hr />
-    <Button color="secondary">Back</Button>
   </div>
 )
 
@@ -35,4 +43,4 @@ const mapDispatchToProps = dispatch => ({
     }),
 })
 
-export default connect()(Settings)
+export default connect(undefined, mapDispatchToProps)(Settings)
