@@ -107,9 +107,30 @@ const addPass = store => next => async action => {
   }
 }
 
+const removePass = store => next => async action => {
+  if (action.type === 'REMOVE_PASS') {
+    const password = jsCookie.get('password')
+    const headers = new Headers()
+    headers.set('x-auth', password)
+
+    const res = await fetch(`/pass?username=${action.username}&pass=${action.pass}`, {
+      method: 'DELETE',
+      headers,
+    })
+
+    if (res.ok) {
+      return next(action)
+    } else {
+      console.error('Error with remove pass request')
+    }
+  } else {
+    return next(action)
+  }
+}
+
 const logger = store => next => action => {
   console.log('ACTION:', action)
   next(action)
 }
 
-export default [logger, addPass, addUser, deleteUser, login]
+export default [logger, removePass, addPass, addUser, deleteUser, login]

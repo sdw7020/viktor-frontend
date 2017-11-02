@@ -26,7 +26,7 @@ const TableRow = ({ username, passIDs, startTime, endTime, removePass }) => (
       {passIDs.map(id => {
         console.log(id)
         return (
-          <p className="pass-id" key={Math.random()} onClick={() => removePass(username, id)}>
+          <p className="pass-id" key={id} onClick={() => removePass(username, id)}>
             {id}
           </p>
         )
@@ -38,11 +38,11 @@ const TableRow = ({ username, passIDs, startTime, endTime, removePass }) => (
 )
 
 const mapDispatchToProps = dispatch => ({
-  removePass: (username, id) =>
+  removePass: (username, pass) =>
     dispatch({
       type: 'REMOVE_PASS',
       username,
-      id,
+      pass,
     }),
 })
 
