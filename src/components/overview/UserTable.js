@@ -1,59 +1,37 @@
-import React from "react"
-import { Table } from "reactstrap"
+import React from 'react'
+import { Table } from 'reactstrap'
 
-import DeleteButton from "./DeleteButton"
-import AddButton from "./AddButton"
+import TableRow from './TableRow'
+import { connect } from 'react-redux'
 
-export default class extends React.Component {
-  constructor(props, test) {
-    super(props)
-    this.state = {
-      modal: false,
-    }
+const UserTable = ({ entries }) => (
+  <Table id="userTable">
+    <thead>
+      <tr>
+        <th />
+        <th />
+        <th>Username</th>
+        <th>PassID</th>
+        <th>Start time</th>
+        <th>End time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {entries.map(entry => (
+        <TableRow
+          username={entry.username}
+          passIDs={entry.passIDs}
+          startTime={entry.startTime}
+          endTime={entry.endTime}
+          key={entry.username}
+        />
+      ))}
+    </tbody>
+  </Table>
+)
 
-    this.delete = this.delete.bind(this)
-  }
+const mapStateToProps = state => ({
+  entries: state.entries,
+})
 
-  delete() {
-    this.setState({
-      modal: !this.state.modal,
-    })
-  }
-
-  add() {
-    this.setState({
-      popoverOpen: !this.state.popoverOpen,
-    })
-  }
-
-  render() {
-    return (
-      <Table id="userTable">
-        <thead>
-          <tr>
-            <th />
-            <th />
-            <th>Username</th>
-            <th>PassID</th>
-            <th>Start time</th>
-            <th>End time</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="tableButton">
-              <DeleteButton />
-            </td>
-            <td className="tableButton">
-              <AddButton />
-            </td>
-            <td className="user">jimd</td>
-            <td>1234567890, 1234567891</td>
-            <td />
-            <td />
-          </tr>
-        </tbody>
-      </Table>
-    )
-  }
-}
+export default connect(mapStateToProps)(UserTable)

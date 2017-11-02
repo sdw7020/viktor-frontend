@@ -1,38 +1,23 @@
-import React from "react"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
+import React from 'react'
+import { Button } from 'reactstrap'
+import AddPassModal from './AddPassModal'
+import { connect } from 'react-redux'
 
-export default class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      modal: false,
-    }
+const AddPassButton = ({ username, showModal }) => (
+  <div>
+    <Button onClick={showModal} className="add" color="success">
+      +
+    </Button>
+    <AddPassModal />
+  </div>
+)
 
-    this.toggle = this.toggle.bind(this)
-  }
+const mapDispatchToProps = dispatch => ({
+  showModal: () =>
+    dispatch({
+      type: 'SHOW_MODAL',
+      modal: 'addPass',
+    }),
+})
 
-  toggle() {
-    this.setState({
-      modal: !this.state.modal,
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <Button onClick={this.toggle} color="primary" className="addButton">
-          Add Pass
-        </Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Scan pass</ModalHeader>
-          <ModalBody>Scan the pass within 10 seconds.</ModalBody>
-          <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>
-              OK
-            </Button>
-          </ModalFooter>
-        </Modal>
-      </div>
-    )
-  }
-}
+export default connect(undefined, mapDispatchToProps)(AddPassButton)

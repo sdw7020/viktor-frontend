@@ -1,5 +1,5 @@
-import React from "react"
-import { Button, Form, FormGroup, Label, Input } from "reactstrap"
+import React from 'react'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 export default () => (
   <Form>
@@ -10,20 +10,22 @@ export default () => (
     </FormGroup>
     <FormGroup>
       <table id="timeTable">
-        <tr>
-          <td>
-            <Label for="exampleTime">Start Time</Label>
-            <Input type="time" name="startTime" placeholder="" />
-          </td>
-          <td>
-            <Label for="exampleTime">End Time</Label>
-            <Input type="time" name="endTime" placeholder="" />
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>
+              <Label for="exampleTime">Start Time</Label>
+              <Input type="time" name="startTime" placeholder="" />
+            </td>
+            <td>
+              <Label for="exampleTime">End Time</Label>
+              <Input type="time" name="endTime" placeholder="" />
+            </td>
+          </tr>
+        </tbody>
       </table>
     </FormGroup>
     <FormGroup>
-      <Button color="primary" className="addButton">
+      <Button onClick={() => {}} color="primary" className="addButton">
         Add User
       </Button>
     </FormGroup>

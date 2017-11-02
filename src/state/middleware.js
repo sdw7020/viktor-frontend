@@ -31,4 +31,33 @@ const loginMiddleware = store => next => async action => {
   }
 }
 
-export default [loginMiddleware]
+const deleteUserMiddleware = store => next => async action => {
+  if (action.type === 'DELETE_USER') {
+    const password = jsCookie.get('password')
+    const headers = new Headers()
+    headers.set('x-auth', password)
+
+    const res = await fetch(`/user?username=${action.username}`, {
+      method: 'DELETE',
+      headers,
+    })
+    if (res.ok) {
+      store.dispatch({
+        type: 'HIDE_MODAL',
+        modal: 'deleteUser',
+      })
+      next(action)
+    } else {
+      console.error('Delete user request failed')
+    }
+  } else {
+    return next(action)
+  }
+}
+
+const logger = store => next => action => {
+  console.log('ACTION:', action)
+  next(action)
+}
+
+export default [logger, deleteUserMiddleware, loginMiddleware]
