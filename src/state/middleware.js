@@ -160,9 +160,33 @@ const changePassword = store => next => async action => {
   }
 }
 
+const restartScanner = store => next => async action => {
+  if (action.type === 'RESTART_SCANNER') {
+    const password = jsCookie.get('password')
+    const headers = new Headers()
+    headers.set('x-auth', password)
+
+    const res = await fetch(`/restart`, {
+      method: 'GET',
+      headers,
+    })
+
+    if (res.ok) {
+      store.dispatch({
+        type: 'NAVIGATE',
+        page: 'overview',
+      })
+    } else {
+      console.error('error in restart request')
+    }
+  } else {
+    return next(action)
+  }
+}
+
 const logger = store => next => action => {
   console.log('ACTION:', action)
   next(action)
 }
 
-export default [logger, changePassword, logout, removePass, addPass, addUser, deleteUser, login]
+export default [logger, restartScanner, changePassword, logout, removePass, addPass, addUser, deleteUser, login]
