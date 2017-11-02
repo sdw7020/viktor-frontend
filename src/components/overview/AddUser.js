@@ -6,18 +6,18 @@ export default () => (
     <h1 className="h1">Add User</h1>
     <FormGroup>
       <Label>Username</Label>
-      <Input type="name" name="name" placeholder="johndoe" />
+      <Input type="name" placeholder="johndoe" />
     </FormGroup>
     <FormGroup>
       <table id="timeTable">
         <tr>
           <td>
             <Label for="exampleTime">Start Time</Label>
-            <Input type="time" name="startTime" placeholder="" />
+            <Input type="time" placeholder="" />
           </td>
           <td>
             <Label for="exampleTime">End Time</Label>
-            <Input type="time" name="endTime" placeholder="" />
+            <Input type="time" placeholder="" />
           </td>
         </tr>
       </table>

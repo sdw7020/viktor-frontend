@@ -89,3 +89,13 @@ button {
 #addPassTitle {
   padding-top: 16px;
 }
+
+/*  ./settings/ */
+
+#settingsContainer {
+  padding: 36px;
+}
+
+#changePasswordInput {
+  width: 256px;
+}

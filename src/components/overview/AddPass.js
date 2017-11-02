@@ -10,7 +10,7 @@ export default () => (
     </h1>
     <FormGroup>
       <Label>Username</Label>
-      <Input type="id" name="name" placeholder="johndoe" />
+      <Input placeholder="johndoe" />
     </FormGroup>
     <FormGroup>
       <AddPassButton />

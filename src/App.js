@@ -1,10 +1,10 @@
-import React from 'react'
-import logo from './viktorlogo.png'
-import './App.css'
-import { connect } from 'react-redux'
+import React from "react"
+import logo from "./viktorlogo.png"
+import "./App.css"
+import { connect } from "react-redux"
 
-import LoginScreen from './components/login/LoginScreen'
-import Overview from './components/overview/Overview'
+import LoginScreen from "./components/login/LoginScreen"
+import Overview from "./components/overview/Overview"
 
 const App = ({ isLoggedIn }) => (
   <div className="App">
