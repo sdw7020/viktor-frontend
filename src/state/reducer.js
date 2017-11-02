@@ -68,7 +68,6 @@ export default function reducer(oldState = defaultState, action) {
       ...oldState,
       entries: oldState.entries.map(entry => {
         if (entry.username === action.username) {
-          console.log('foundem, adding pass')
           return {
             ...entry,
             passIDs: [...entry.passIDs, action.passID],
