@@ -20,7 +20,7 @@ export default class extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle} className="add" color="success">+</Button>
+        <Button id="Popover1" onClick={this.toggle} className="add" color="success">+</Button>
         <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.add}>
           <PopoverHeader>Scan</PopoverHeader>
           <PopoverBody>Scan your new pass in 10 seconds.</PopoverBody>
