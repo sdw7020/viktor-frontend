@@ -128,9 +128,17 @@ const removePass = store => next => async action => {
   }
 }
 
+const logout = store => next => action => {
+  if (action.type === 'LOGOUT') {
+    jsCookie.remove('password')
+  }
+
+  return next(action)
+}
+
 const logger = store => next => action => {
   console.log('ACTION:', action)
   next(action)
 }
 
-export default [logger, removePass, addPass, addUser, deleteUser, login]
+export default [logger, logout, removePass, addPass, addUser, deleteUser, login]

@@ -9,7 +9,9 @@ import Overview from './components/overview/Overview'
 const App = ({ page }) => (
   <div className="App">
     <Header />
-    <div id="container">{page === 'login' ? <LoginScreen /> : page === 'overview' ? <Overview /> : <p> unknown page </p>}</div>
+    <div id="container">
+      {page === 'login' ? <LoginScreen /> : page === 'overview' ? <Overview /> : page === 'settings' ? <Settings /> : <p> unknown page </p>}
+    </div>
   </div>
 )
 
