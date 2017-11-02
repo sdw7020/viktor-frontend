@@ -1,6 +1,6 @@
 import jsCookie from 'js-cookie'
 
-export const loginMiddleware = store => next => async action => {
+const loginMiddleware = store => next => async action => {
   if (action.type === 'LOGIN') {
     const headers = new Headers()
     headers.set('x-auth', action.password)
@@ -13,8 +13,13 @@ export const loginMiddleware = store => next => async action => {
       next({
         type: 'LOGIN_SUCCESS',
       })
-
       jsCookie.set('password', action.password)
+
+      const data = await res.json()
+      store.dispatch({
+        type: 'ENTRIES',
+        data,
+      })
     } else {
       jsCookie.remove('password')
       next({
@@ -25,3 +30,5 @@ export const loginMiddleware = store => next => async action => {
     return next(action)
   }
 }
+
+export default [loginMiddleware]
