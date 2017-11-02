@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from './viktorlogo.png'
 import './App.css'
-import {} from 'reactstrap'
 
 // SWAP THE PATH OF THE LINE BELOW TO ./components/login/LoginScreen TO VIEW
 // THE LOGIN SCREEN.
