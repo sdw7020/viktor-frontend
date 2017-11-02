@@ -3,10 +3,9 @@ import { FormGroup, Label, Input, Button } from 'reactstrap'
 import { connect } from 'react-redux'
 import jsCookie from 'js-cookie'
 
-const Settings = ({ changePassword }) => (
+const Settings = ({ changePassword, restartScanner }) => (
   <div id="settingsContainer">
     <h1 className="h1">Settings</h1>
-
     <FormGroup>
       <Label>Change admin password.</Label>
     </FormGroup>
@@ -39,6 +38,17 @@ const Settings = ({ changePassword }) => (
 
     <br />
     <hr />
+    <h1 className="h1">Restart scanner</h1>
+    <FormGroup>
+      <Label>Restart the scanner if it happens to get stuck.</Label>
+    </FormGroup>
+    <FormGroup>
+      <Button onClick={restartScanner} color="warning">
+        Restart
+      </Button>
+    </FormGroup>
+    <br />
+    <hr />
   </div>
 )
 
@@ -47,6 +57,10 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'CHANGE_PASSWORD',
       newPassword,
+    }),
+  restartScanner: () =>
+    dispatch({
+      type: 'RESTART_SCANNER',
     }),
 })
 
