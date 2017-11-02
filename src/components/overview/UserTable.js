@@ -1,5 +1,5 @@
 import React from "react"
-import { Table, Modal, ModalHeader, ModalBody, ModalFooter, Button, Popover, PopoverHeader, PopoverBody } from "reactstrap"
+import { Table } from "reactstrap"
 
 import DeleteButton from "./DeleteButton"
 import AddButton from "./AddButton"
