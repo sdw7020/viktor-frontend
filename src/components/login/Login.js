@@ -8,7 +8,6 @@ export default ({ login }) => {
       <br />
       <Button
         onClick={() => {
-          console.log('hi')
           const password = document.getElementById('password-input').value
           login(password)
         }}

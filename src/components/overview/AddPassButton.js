@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button } from 'reactstrap'
-import AddPassModal from './AddPassModal'
 import { connect } from 'react-redux'
 
 const AddPassButton = ({ username, showModal }) => (
@@ -8,7 +7,6 @@ const AddPassButton = ({ username, showModal }) => (
     <Button onClick={showModal} className="add" color="success">
       +
     </Button>
-    <AddPassModal />
   </div>
 )
 

@@ -5,6 +5,7 @@ const defaultState = {
   entries: [],
   modals: {
     deleteUser: false,
+    deleteUserUsername: null,
     addPass: false,
   },
 }
@@ -35,12 +36,18 @@ export default function reducer(oldState = defaultState, action) {
   if (action.type === 'SHOW_MODAL') {
     const newState = { ...oldState, modals: { ...oldState.modals } }
     newState.modals[action.modal] = true
+    if (action.modal === 'deleteUser') {
+      newState.modals.deleteUserUsername = action.username
+    }
     return newState
   }
 
   if (action.type === 'HIDE_MODAL') {
     const newState = { ...oldState, modals: { ...oldState.modals } }
     newState.modals[action.modal] = false
+    if (action.modal === 'deleteUser') {
+      newState.modals.deleteUserUsername = null
+    }
     return newState
   }
 

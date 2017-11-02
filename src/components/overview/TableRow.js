@@ -3,6 +3,16 @@ import DeleteUserButton from './DeleteUserButton'
 import AddPassButton from './AddPassButton'
 import { connect } from 'react-redux'
 
+const convertToNiceTime = ms => {
+  const seconds = Math.floor(ms / 1000)
+  const minutes = Math.floor(seconds / 60)
+  const hours = Math.floor(seconds / 60 / 60)
+
+  const finalMinutes = minutes % 60
+
+  return `${hours}:${finalMinutes}`
+}
+
 const TableRow = ({ username, passIDs, startTime, endTime, removePass }) => (
   <tr>
     <td className="tableButton">
@@ -19,8 +29,8 @@ const TableRow = ({ username, passIDs, startTime, endTime, removePass }) => (
         </p>
       ))}
     </td>
-    <td>{startTime}</td>
-    <td>{endTime}</td>
+    <td>{convertToNiceTime(startTime)}</td>
+    <td>{convertToNiceTime(endTime)}</td>
   </tr>
 )
 

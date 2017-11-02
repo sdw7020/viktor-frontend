@@ -32,6 +32,22 @@ const AddUser = ({ addUser }) => (
           const startTimeVal = document.getElementById('start-time-input').value.split(':')
           const endTimeVal = document.getElementById('end-time-input').value.split(':')
 
+          if (!startTimeVal[0]) {
+            startTimeVal[0] = '00'
+          }
+
+          if (!startTimeVal[1]) {
+            startTimeVal[1] = '00'
+          }
+
+          if (!endTimeVal[0]) {
+            endTimeVal[0] = '00'
+          }
+
+          if (!endTimeVal[1]) {
+            endTimeVal[1] = '00'
+          }
+
           const startTime = startTimeVal[0] * 60 * 60 * 1000 + startTimeVal[1] * 60 * 1000
           const endTime = endTimeVal[0] * 60 * 60 * 1000 + endTimeVal[1] * 60 * 1000
 
