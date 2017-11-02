@@ -132,20 +132,31 @@ const addPass = store => next => async action => {
       type: 'HIDE_MODAL',
       modal: 'addPass',
     })
+
+    const text = await res.text()
     if (res.ok) {
-      const passID = (await res.text()).split(':')[1]
+      const passID = text.split(':')[1]
       next({
         ...action,
         passID,
         username,
       })
-    } else if (res.status === 400) {
+    } else if (text === 'pass is already associated with a user') {
       store.dispatch({
         type: 'SHOW_MODAL',
         modal: {
           name: 'GENERIC',
           header: 'Error',
-          text: 'Please scan a pass',
+          text: 'This pass is already associated with a user.',
+        },
+      })
+    } else if (text === 'Please scan the pass within 10 seconds') {
+      store.dispatch({
+        type: 'SHOW_MODAL',
+        modal: {
+          name: 'GENERIC',
+          header: 'Error',
+          text: 'Please scan the pass within 10 seconds.',
         },
       })
     } else {
