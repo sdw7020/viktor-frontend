@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from './Login'
+import Login from './LoginContainer'
 
 export default () => (
   <div id="loginForm">
