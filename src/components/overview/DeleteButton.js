@@ -20,15 +20,23 @@ export default class extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle} className="delete" color="danger">×</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Button onClick={this.toggle} className="delete" color="danger">
+          ×
+        </Button>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className={this.props.className}
+        >
           <ModalHeader toggle={this.toggle}>Delete user?</ModalHeader>
-          <ModalBody>
-            Are you sure you want to delete this user?
-          </ModalBody>
+          <ModalBody>Are you sure you want to delete this user?</ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-            <Button color="danger" onClick={this.toggle}>Delete</Button>
+            <Button color="secondary" onClick={this.toggle}>
+              Cancel
+            </Button>
+            <Button color="danger" onClick={this.toggle}>
+              Delete
+            </Button>
           </ModalFooter>
         </Modal>
       </div>
