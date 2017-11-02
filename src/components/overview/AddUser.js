@@ -1,12 +1,12 @@
-import React from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import React from "react"
+import { Button, Form, FormGroup, Label, Input } from "reactstrap"
 
 export default () => (
   <Form>
     <h1 className="h1">Add User</h1>
     <FormGroup>
-      <Label for="exampleEmail">Name</Label>
-      <Input type="name" name="name" placeholder="John Doe" />
+      <Label>Username</Label>
+      <Input type="name" name="name" placeholder="johndoe" />
     </FormGroup>
     <FormGroup>
       <table id="timeTable">

@@ -1,5 +1,7 @@
-import React from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import React from "react"
+import { Form, FormGroup, Label, Input } from "reactstrap"
+
+import AddPassButton from "./AddPassButton"
 
 export default () => (
   <Form>
@@ -7,17 +9,11 @@ export default () => (
       Add Pass
     </h1>
     <FormGroup>
-      <Label for="exampleEmail">User ID</Label>
-      <Input
-        type="id"
-        name="userID"
-        placeholder="110ec58a-a0f2-4ac4-8393-c866d813b8d1"
-      />
+      <Label>Username</Label>
+      <Input type="id" name="name" placeholder="johndoe" />
     </FormGroup>
     <FormGroup>
-      <Button color="primary" className="addButton">
-        Add Pass
-      </Button>
+      <AddPassButton />
     </FormGroup>
   </Form>
 )
