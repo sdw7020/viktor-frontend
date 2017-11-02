@@ -23,7 +23,9 @@ export default () => (
       </table>
     </FormGroup>
     <FormGroup>
-      <Button color="primary" className="addButton">Add User</Button>
+      <Button color="primary" className="addButton">
+        Add User
+      </Button>
     </FormGroup>
   </Form>
 )
