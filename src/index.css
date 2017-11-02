@@ -31,6 +31,13 @@ button {
   left: calc(50% - 50px);
 }
 
+.wrongPassword {
+  position: fixed;
+  bottom: 5%;
+  width: 256px;
+  height: 55px;
+}
+
 /*  ./panel/  */
 
 .tableButton {

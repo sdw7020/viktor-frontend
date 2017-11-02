@@ -1,8 +1,11 @@
-import React from 'react'
-import Login from './LoginContainer'
+import React from "react"
+import Login from "./LoginContainer"
 
-export default () => (
+import WrongPassword from "./WrongPassword"
+
+export default ({ WrongPassword }) => (
   <div id="loginForm">
     <Login />
+    {WrongPassword ? <WrongPassword /> : undefined}
   </div>
 )

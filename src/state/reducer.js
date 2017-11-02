@@ -21,5 +21,8 @@ export default function reducer(oldState = defaultState, action) {
     }
   }
 
+  if (action.type === 'ENTRIES') {
+  }
+
   return oldState
 }
