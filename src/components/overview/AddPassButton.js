@@ -2,20 +2,25 @@ import React from 'react'
 import { Button } from 'reactstrap'
 import { connect } from 'react-redux'
 
-const AddPassButton = ({ username, showModal }) => (
+const AddPassButton = ({ addPass, username }) => (
   <div>
-    <Button onClick={showModal} className="add" color="success">
+    <Button onClick={() => addPass(username)} className="add" color="success">
       +
     </Button>
   </div>
 )
 
 const mapDispatchToProps = dispatch => ({
-  showModal: () =>
+  addPass: username => {
     dispatch({
       type: 'SHOW_MODAL',
       modal: 'addPass',
-    }),
+      username,
+    })
+    dispatch({
+      type: 'ADD_PASS',
+    })
+  },
 })
 
 export default connect(undefined, mapDispatchToProps)(AddPassButton)

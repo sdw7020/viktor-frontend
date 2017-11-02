@@ -1,7 +1,5 @@
-const jsCookie = require('js-cookie')
-
 const defaultState = {
-  isLoggedIn: !!jsCookie.get('password'),
+  page: 'login',
   entries: [],
   modals: {
     deleteUser: false,
@@ -14,7 +12,7 @@ export default function reducer(oldState = defaultState, action) {
   if (action.type === 'LOGIN_SUCCESS') {
     return {
       ...oldState,
-      isLoggedIn: true,
+      page: 'overview',
     }
   }
 
@@ -36,18 +34,14 @@ export default function reducer(oldState = defaultState, action) {
   if (action.type === 'SHOW_MODAL') {
     const newState = { ...oldState, modals: { ...oldState.modals } }
     newState.modals[action.modal] = true
-    if (action.modal === 'deleteUser') {
-      newState.modals.deleteUserUsername = action.username
-    }
+    newState.modals[`${action.modal}Username`] = action.username
     return newState
   }
 
   if (action.type === 'HIDE_MODAL') {
     const newState = { ...oldState, modals: { ...oldState.modals } }
     newState.modals[action.modal] = false
-    if (action.modal === 'deleteUser') {
-      newState.modals.deleteUserUsername = null
-    }
+    newState.modals[`${action.modal}Username`] = null
     return newState
   }
 
@@ -70,6 +64,23 @@ export default function reducer(oldState = defaultState, action) {
           passIDs: [],
         },
       ],
+    }
+  }
+
+  if (action.type === 'ADD_PASS') {
+    return {
+      ...oldState,
+      entries: oldState.entries.map(entry => {
+        if (entry.username === action.username) {
+          console.log('foundem, adding pass')
+          return {
+            ...entry,
+            passIDs: [...entry.passIDs, action.passID],
+          }
+        } else {
+          return entry
+        }
+      }),
     }
   }
   return oldState

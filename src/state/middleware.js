@@ -76,9 +76,40 @@ const addUser = store => next => async action => {
   }
 }
 
+const addPass = store => next => async action => {
+  if (action.type === 'ADD_PASS') {
+    const password = jsCookie.get('password')
+    const headers = new Headers()
+    headers.set('x-auth', password)
+
+    const username = store.getState().modals.addPassUsername
+
+    const res = await fetch(`/pass?username=${username}`, {
+      method: 'PUT',
+      headers,
+    })
+    store.dispatch({
+      type: 'HIDE_MODAL',
+      modal: 'addPass',
+    })
+    if (res.ok) {
+      const passID = (await res.text()).split(':')[1]
+      next({
+        ...action,
+        passID,
+        username,
+      })
+    } else {
+      console.error('Error in add pass request')
+    }
+  } else {
+    return next(action)
+  }
+}
+
 const logger = store => next => action => {
   console.log('ACTION:', action)
   next(action)
 }
 
-export default [logger, addUser, deleteUser, login]
+export default [logger, addPass, addUser, deleteUser, login]
