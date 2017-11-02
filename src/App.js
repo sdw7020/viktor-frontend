@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Header from './components/Header'
 import LoginScreen from './components/login/LoginScreen'
 import Overview from './components/overview/Overview'
+import Settings from './components/settings/Settings'
 
 const App = ({ page }) => (
   <div className="App">

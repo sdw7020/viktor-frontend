@@ -106,5 +106,12 @@ export default function reducer(oldState = defaultState, action) {
       page: 'login',
     }
   }
+
+  if (action.type === 'NAVIGATE') {
+    return {
+      ...oldState,
+      page: action.page,
+    }
+  }
   return oldState
 }

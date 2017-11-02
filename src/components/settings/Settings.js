@@ -1,7 +1,7 @@
-import React from "react"
-import { Form, FormGroup, Label, Input, Button } from "reactstrap"
+import React from 'react'
+import { FormGroup, Label, Input, Button } from 'reactstrap'
 
-export default () => (
+const Settings = ({ changePassword }) => (
   <div id="settingsContainer">
     <h1 className="h1">Settings</h1>
 
@@ -25,3 +25,13 @@ export default () => (
     <Button color="secondary">Back</Button>
   </div>
 )
+
+const mapDispatchToProps = dispatch => ({
+  changePassword: newPassword =>
+    dispatch({
+      type: 'CHANGE_PASSWORD',
+      newPassword,
+    }),
+})
+
+export default connect()(Settings)
