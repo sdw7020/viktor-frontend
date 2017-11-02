@@ -2,10 +2,10 @@ import React from 'react'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import { connect } from 'react-redux'
 
-const WrongPasswordModal = ({ hideModal }) => (
+const GenericModal = ({ hideModal, text, header }) => (
   <Modal isOpen={true}>
-    <ModalHeader>Error</ModalHeader>
-    <ModalBody>Wrong password.</ModalBody>
+    <ModalHeader>{header}</ModalHeader>
+    <ModalBody>{text}</ModalBody>
     <ModalFooter>
       <Button color="secondary" onClick={hideModal}>
         OK
@@ -14,6 +14,11 @@ const WrongPasswordModal = ({ hideModal }) => (
   </Modal>
 )
 
+const mapStateToProps = state => ({
+  text: state.modal.text,
+  header: state.modal.header,
+})
+
 const mapDispatchToProps = dispatch => ({
   hideModal: () =>
     dispatch({
@@ -21,4 +26,4 @@ const mapDispatchToProps = dispatch => ({
     }),
 })
 
-export default connect(undefined, mapDispatchToProps)(WrongPasswordModal)
+export default connect(mapStateToProps, mapDispatchToProps)(GenericModal)

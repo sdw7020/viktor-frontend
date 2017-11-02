@@ -7,22 +7,15 @@ import LoginScreen from './components/login/LoginScreen'
 import Overview from './components/overview/Overview'
 import Settings from './components/settings/Settings'
 
-import AddPassModal from './components/modals/AddPassModal'
 import DeleteUserModal from './components/modals/DeleteUserModal'
-import WrongPasswordModal from './components/modals/WrongPasswordModal'
+import GenericModal from './components/modals/GenericModal'
 
 const App = ({ page, modal }) => (
   <div className="App">
     <Header />
     <div id="container">
       {page === 'login' ? <LoginScreen /> : page === 'overview' ? <Overview /> : page === 'settings' ? <Settings /> : <p> unknown page </p>}
-      {modal === 'DELETE_USER' ? (
-        <DeleteUserModal />
-      ) : modal === 'ADD_PASS' ? (
-        <AddPassModal />
-      ) : modal === 'WRONG_PASSWORD' ? (
-        <WrongPasswordModal />
-      ) : null}
+      {modal === 'DELETE_USER' ? <DeleteUserModal /> : modal === 'GENERIC' ? <GenericModal /> : null}
     </div>
   </div>
 )

@@ -21,13 +21,35 @@ const login = store => next => async action => {
         data,
       })
     } else {
-      jsCookie.remove('password')
-      store.dispatch({
-        type: 'SHOW_MODAL',
-        modal: {
-          name: 'WRONG_PASSWORD',
-        },
-      })
+      if ((await res.text()) === 'Bad credentials') {
+        jsCookie.remove('password')
+        store.dispatch({
+          type: 'SHOW_MODAL',
+          modal: {
+            name: 'GENERIC',
+            header: 'Error',
+            text: 'Wrong password.',
+          },
+        })
+      } else if (res.status === 429) {
+        store.dispatch({
+          type: 'SHOW_MODAL',
+          modal: {
+            name: 'GENERIC',
+            header: 'Error',
+            text: 'Too many wrong password attempts, please wait 5 minutes.',
+          },
+        })
+      } else {
+        store.dispatch({
+          type: 'SHOW_MODAL',
+          modal: {
+            name: 'GENERIC',
+            header: 'Error',
+            text: 'Unknown error.',
+          },
+        })
+      }
     }
   } else {
     return next(action)
@@ -50,6 +72,14 @@ const deleteUser = store => next => async action => {
       })
       next(action)
     } else {
+      store.dispatch({
+        type: 'SHOW_MODAL',
+        modal: {
+          name: 'GENERIC',
+          header: 'Error',
+          text: 'Unknown error.',
+        },
+      })
       console.error('Delete user request failed')
     }
   } else {
@@ -71,6 +101,14 @@ const addUser = store => next => async action => {
     if (res.ok) {
       next(action)
     } else {
+      store.dispatch({
+        type: 'SHOW_MODAL',
+        modal: {
+          name: 'GENERIC',
+          header: 'Error',
+          text: 'Unknown error.',
+        },
+      })
       console.error('add user request failed')
     }
   } else {
@@ -102,6 +140,14 @@ const addPass = store => next => async action => {
         username,
       })
     } else {
+      store.dispatch({
+        type: 'SHOW_MODAL',
+        modal: {
+          name: 'GENERIC',
+          header: 'Error',
+          text: 'Unknown error.',
+        },
+      })
       console.error('Error in add pass request')
     }
   } else {
@@ -123,6 +169,14 @@ const removePass = store => next => async action => {
     if (res.ok) {
       return next(action)
     } else {
+      store.dispatch({
+        type: 'SHOW_MODAL',
+        modal: {
+          name: 'GENERIC',
+          header: 'Error',
+          text: 'Unknown error.',
+        },
+      })
       console.error('Error with remove pass request')
     }
   } else {
@@ -153,6 +207,14 @@ const changePassword = store => next => async action => {
       jsCookie.remove('password')
       return next(action)
     } else {
+      store.dispatch({
+        type: 'SHOW_MODAL',
+        modal: {
+          name: 'GENERIC',
+          header: 'Error',
+          text: 'Unknown error.',
+        },
+      })
       console.error('Error with remove pass request')
     }
   } else {
@@ -177,6 +239,14 @@ const restartScanner = store => next => async action => {
         page: 'overview',
       })
     } else {
+      store.dispatch({
+        type: 'SHOW_MODAL',
+        modal: {
+          name: 'GENERIC',
+          header: 'Error',
+          text: 'Unknown error.',
+        },
+      })
       console.error('error in restart request')
     }
   } else {

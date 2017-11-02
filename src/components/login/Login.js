@@ -1,6 +1,6 @@
-import React from "react"
-import { Input, Button } from "reactstrap"
-import { connect } from "react-redux"
+import React from 'react'
+import { Input, Button } from 'reactstrap'
+import { connect } from 'react-redux'
 
 const Login = ({ login }) => {
   return (
@@ -10,7 +10,7 @@ const Login = ({ login }) => {
       <Button
         color="primary"
         onClick={() => {
-          const password = document.getElementById("password-input").value
+          const password = document.getElementById('password-input').value
           login(password)
         }}
         id="loginButton"
@@ -24,7 +24,7 @@ const Login = ({ login }) => {
 const mapDispatchToProps = dispatch => ({
   login: password =>
     dispatch({
-      type: "LOGIN",
+      type: 'LOGIN',
       password,
     }),
 })
