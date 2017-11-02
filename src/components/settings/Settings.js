@@ -1,5 +1,6 @@
 import React from 'react'
 import { FormGroup, Label, Input, Button } from 'reactstrap'
+import { connect } from 'react-redux'
 
 const Settings = ({ changePassword }) => (
   <div id="settingsContainer">
