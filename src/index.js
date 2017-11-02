@@ -24,6 +24,9 @@ if (jsCookie.get('password')) {
   })
     .then(res => {
       if (res.ok) {
+        store.dispatch({
+          type: 'LOGIN_SUCCESS',
+        })
         return res.json()
       } else {
         jsCookie.remove('password')

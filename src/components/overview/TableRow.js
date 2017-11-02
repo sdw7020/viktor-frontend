@@ -10,7 +10,7 @@ const convertToNiceTime = ms => {
 
   const finalMinutes = minutes % 60
 
-  return `${hours}:${finalMinutes}`
+  return `${hours.toString().padStart(2, '0')}:${finalMinutes.toString().padStart(2, '0')}`
 }
 
 const TableRow = ({ username, passIDs, startTime, endTime, removePass }) => (
@@ -23,11 +23,14 @@ const TableRow = ({ username, passIDs, startTime, endTime, removePass }) => (
     </td>
     <td className="user">{username}</td>
     <td>
-      {passIDs.map(id => (
-        <p className="pass-id" key={id} onClick={() => removePass(username, id)}>
-          {id}
-        </p>
-      ))}
+      {passIDs.map(id => {
+        console.log(id)
+        return (
+          <p className="pass-id" key={Math.random()} onClick={() => removePass(username, id)}>
+            {id}
+          </p>
+        )
+      })}
     </td>
     <td>{convertToNiceTime(startTime)}</td>
     <td>{convertToNiceTime(endTime)}</td>

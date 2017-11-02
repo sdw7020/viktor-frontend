@@ -1,8 +1,8 @@
-import React from "react"
-import { Table } from "reactstrap"
+import React from 'react'
+import { Table } from 'reactstrap'
 
-import TableRow from "./TableRow"
-import { connect } from "react-redux"
+import TableRow from './TableRow'
+import { connect } from 'react-redux'
 
 const UserTable = ({ entries }) => (
   <Table id="userTable">
