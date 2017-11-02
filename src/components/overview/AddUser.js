@@ -1,12 +1,11 @@
 import React from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
-import '../style.css'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 export default () => (
   <Form>
     <h1 className="h1">Add User</h1>
     <FormGroup>
-      <Label for="exampleEmail">Username</Label>
+      <Label for="exampleEmail">Name</Label>
       <Input type="name" name="name" placeholder="John Doe" />
     </FormGroup>
     <FormGroup>
