@@ -83,5 +83,21 @@ export default function reducer(oldState = defaultState, action) {
       }),
     }
   }
+
+  if (action.type === 'REMOVE_PASS') {
+    return {
+      ...oldState,
+      entries: oldState.entries.map(entry => {
+        if (entry.username === action.username) {
+          return {
+            ...entry,
+            passIDs: entry.passIDs.filter(id => id !== action.pass),
+          }
+        } else {
+          return entry
+        }
+      }),
+    }
+  }
   return oldState
 }
