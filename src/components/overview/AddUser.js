@@ -49,8 +49,11 @@ const AddUser = ({ addUser }) => (
           }
 
           const startTime = startTimeVal[0] * 60 * 60 * 1000 + startTimeVal[1] * 60 * 1000
-          const endTime = endTimeVal[0] * 60 * 60 * 1000 + endTimeVal[1] * 60 * 1000
+          let endTime = endTimeVal[0] * 60 * 60 * 1000 + endTimeVal[1] * 60 * 1000
 
+          if (startTime === 0 && endTime === 0) {
+            endTime = 86400000
+          }
           addUser(username, startTime, endTime)
         }}
         color="primary"
