@@ -1,10 +1,10 @@
-import React from 'react'
-import logo from './viktorlogo.png'
-import './App.css'
+import React from "react"
+import logo from "./viktorlogo.png"
+import "./App.css"
 
 // SWAP THE PATH OF THE LINE BELOW TO ./components/login/LoginScreen TO VIEW
 // THE LOGIN SCREEN.
-import ComponentTest from './components/overview/Overview'
+import ComponentTest from "./components/login/LoginScreen"
 
 export default () => (
   <div className="App">
