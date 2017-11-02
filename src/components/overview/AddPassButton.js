@@ -15,7 +15,9 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'SHOW_MODAL',
       modal: {
-        name: 'ADD_PASS',
+        name: 'GENERIC',
+        header: 'Scan pass',
+        text: 'Please scan a pass within 10 seconds.',
         username,
       },
     })

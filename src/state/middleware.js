@@ -139,6 +139,15 @@ const addPass = store => next => async action => {
         passID,
         username,
       })
+    } else if (res.status === 400) {
+      store.dispatch({
+        type: 'SHOW_MODAL',
+        modal: {
+          name: 'GENERIC',
+          header: 'Error',
+          text: 'Please scan a pass',
+        },
+      })
     } else {
       store.dispatch({
         type: 'SHOW_MODAL',
