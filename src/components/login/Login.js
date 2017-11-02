@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Label, Input, Button } from 'reactstrap'
 
 export default () => (

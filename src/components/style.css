@@ -8,9 +8,7 @@ button {
   cursor: pointer;
 }
 
-/*
- *  ./login/
- */
+/*  ./login/  */
 
 #loginForm {
   position: absolute;
@@ -27,9 +25,7 @@ button {
   left: calc(50% - 50px);
 }
 
-/*
- *  ./panel/
- */
+/*  ./panel/  */
 
 .deleteColumn {
   width: 10px;
