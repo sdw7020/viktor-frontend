@@ -1,7 +1,7 @@
-import React from "react"
-import DeleteUserButton from "./DeleteUserButton"
-import AddPassButton from "./AddPassButton"
-import { connect } from "react-redux"
+import React from 'react'
+import DeleteUserButton from './DeleteUserButton'
+import AddPassButton from './AddPassButton'
+import { connect } from 'react-redux'
 
 const convertToNiceTime = ms => {
   const seconds = Math.floor(ms / 1000)
@@ -10,7 +10,7 @@ const convertToNiceTime = ms => {
 
   const finalMinutes = minutes % 60
 
-  return `${hours.toString().padStart(2, "0")}:${finalMinutes.toString().padStart(2, "0")}`
+  return `${hours.toString().padStart(2, '0')}:${finalMinutes.toString().padStart(2, '0')}`
 }
 
 const TableRow = ({ username, passIDs, startTime, endTime, removePass }) => (
@@ -24,7 +24,6 @@ const TableRow = ({ username, passIDs, startTime, endTime, removePass }) => (
     <td className="user">{username}</td>
     <td>
       {passIDs.map(id => {
-        console.log(id)
         return (
           <p title="Delete this pass" className="pass-id" key={id} onClick={() => removePass(username, id)}>
             {id}
@@ -40,7 +39,7 @@ const TableRow = ({ username, passIDs, startTime, endTime, removePass }) => (
 const mapDispatchToProps = dispatch => ({
   removePass: (username, pass) =>
     dispatch({
-      type: "REMOVE_PASS",
+      type: 'REMOVE_PASS',
       username,
       pass,
     }),
