@@ -6,23 +6,11 @@
 This project runs on Node.js so you need to install it if not done already.
 To install Node.js, go to [the downloads page](https://nodejs.org/en/download/) and download the latest version in the 8.x.x range.
 
-### Installation
-
-* Install Node.js if not done already.
-
-* Extract admin-panel.zip to a folder.
-
-* Change directory to path of the downloaded repository.
-
-* Enter in terminal: npm install to install all dependencies of the repository.
-
-* Enter in terminal: npm start to open the web page.
-
 ### Setup
-
-
-### Use
-
+After having installed node, `cd` into the viktor-frontend folder and run `npm install`.  
+When the dependencies finish installing, run `npm build` to create a build folder.  
+Keep this build folder, you will need it for the backend setup.  
+Now go to the viktor-backend readme.md and follow the instructions there.
 
 ## License
 This project was brought to you by the kind folks of the viktor working group.
