@@ -3,14 +3,14 @@
 
 ## Testing instructions
 ### Node.js
-This project runs on Node.js so you need to install it if not done already.
+This project runs on Node.js so you need to install it if you haven't already.
 To install Node.js, go to [the downloads page](https://nodejs.org/en/download/) and download the latest version in the 8.x.x range.
 
 ### Installation
 
 * Install Node.js if not done already.
 
-* Extract admin-panel.zip to a folder.
+* Extract ``viktor-frontend.zip`` to a folder.
 
 * Change directory to path of the downloaded repository.
 
