@@ -14,15 +14,15 @@ To install Node.js, go to [the downloads page](https://nodejs.org/en/download/) 
 
 * Change directory to path of the downloaded repository.
 
-* Enter in terminal: npm install to install all dependencies of the repository.
+* Enter in terminal: ``npm install`` to install all dependencies of the repository.
 
-* Enter in terminal: npm start to open the web page.
-
-### Setup
+* Enter in terminal: ``npm start`` to open the web page.
 
 
 ### Use
+When you run the web page a login screen will show up. The default password is  ``hunter2``. When you log in, you get access to the overview screen. On the overview you can add users, delete users, add passes to users, delete passes from users, go to the settings screen and log out.
 
+On the settings page you can change your password and restart the scanner if it gets stuck.
 
 ## License
 This project was brought to you by the kind folks of the viktor working group.
