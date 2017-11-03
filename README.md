@@ -8,11 +8,15 @@ To install Node.js, go to [the downloads page](https://nodejs.org/en/download/) 
 
 ### Installation
 
-⋅⋅* Install Node.js if not done already.
-⋅⋅* Extract admin-panel.zip to a folder.
-⋅⋅* Change directory to path of the downloaded repository.
-⋅⋅* Enter in terminal: npm install to install all dependencies of the repository.
-⋅⋅* Enter in terminal: npm start to open the web page.
+* Install Node.js if not done already.
+
+* Extract admin-panel.zip to a folder.
+
+* Change directory to path of the downloaded repository.
+
+* Enter in terminal: npm install to install all dependencies of the repository.
+
+* Enter in terminal: npm start to open the web page.
 
 ### Setup
 
