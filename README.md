@@ -2,9 +2,17 @@
 
 
 ## Testing instructions
-### Installing Node.js
+### Node.js
 This project runs on Node.js so you need to install node.  
 To install node, go to [the downloads page](https://nodejs.org/en/download/) and download the latest node version in the 8.x.x range.
+
+### Installation
+
+-Install Node.js if not done already.
+-Extract admin-panel.zip to a folder.
+-Change directory to path of the downloaded repository.
+-Enter in terminal: npm install to install all dependencies of the repository.
+-Enter in terminal: npm start to open the web page.
 
 ### Setup
 
