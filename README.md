@@ -8,7 +8,7 @@ To install Node.js, go to [the downloads page](https://nodejs.org/en/download/) 
 
 ### Setup
 After having installed node, `cd` into the viktor-frontend folder and run `npm install`.  
-When the dependencies finish installing, run `npm build` to create a build folder.  
+When the dependencies finish installing, run `npm run build` to create a build folder.  
 Keep this build folder, you will need it for the backend setup.  
 Now go to the viktor-backend readme.md and follow the instructions there.
 
