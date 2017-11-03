@@ -24,6 +24,7 @@ const Settings = ({ changePassword, showWrongPassword, restartScanner }) => (
           if (oldPassword === jsCookie.get('password')) {
             changePassword(newPassword)
           } else {
+            showWrongPassword()
             console.error("Passwords don't match")
           }
         }}
@@ -60,7 +61,9 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'SHOW_MODAL',
       modal: {
-        name: 'WRONG_PASSWORD',
+        name: 'GENERIC',
+        header: 'Error',
+        text: 'Please enter the correct old password',
       },
     }),
   restartScanner: () =>
